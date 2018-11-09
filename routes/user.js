@@ -12,3 +12,18 @@ router.get('/users', async (req, res, next) => {
     next(err);
   }
 });
+
+router.get('/users/:id', async (req, res, next) => {
+  try {
+    const user = await User.findOne({ where: { id: req.params.id } });
+    const uPages = await Page.findAll({
+      where: {
+        authorId: req.params.id,
+      },
+    });
+    console.log(user);
+    res.send(userPages(user, uPages));
+  } catch (err) {
+    next(err);
+  }
+});

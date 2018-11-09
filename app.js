@@ -24,7 +24,7 @@ const PORT = 1234;
 
 const init = async () => {
   try {
-    // await models.db.sync({ force: true });
+    //await models.db.sync({ force: true });
     await models.db.sync({});
   } catch (err) {
     console.error(err);

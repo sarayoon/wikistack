@@ -22,8 +22,8 @@ router.get('/:slug', async (req, res, next) => {
     const foundPage = await Page.findOne({
       where: { slug: req.params.slug },
     });
-    // pass in the user object for this page to wikiPage
-    res.send(wikiPage(foundPage));
+    const author = await foundPage.getAuthor();
+    res.send(wikiPage(foundPage, author));
   } catch (err) {
     next(err);
   }
