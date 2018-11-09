@@ -39,7 +39,15 @@ module.exports = () =>
         </div>
       </div>
 
-      <div>PLACEHOLDER FOR PAGE STATUS INPUT FIELD</div>
+      <div class="form-group">
+        <label for="status" class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-10">
+          <select name="status">
+            <option value="open">open</option>
+            <option value="closed">closed</option>
+          </select>
+        </div>
+      </div>
 
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary">submit</button>
